@@ -399,7 +399,13 @@ export default defineEndpoint((router, { services }) => {
     });
 
     // Upload custom image with folder support
-    const upload = multer({ storage: multer.memoryStorage() });
+    const upload = multer({
+        storage: multer.memoryStorage(),
+        limits: {
+            fileSize: 50 * 1024 * 1024, // 50MB max
+            files: 1
+        }
+    });
 
     router.post('/upload', upload.single('file'), async (req: UploadRequest, res) => {
         const file = req.file;
