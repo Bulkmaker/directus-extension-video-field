@@ -52,17 +52,23 @@
   },
   "scripts": {
     "build": "directus-extension build",
-    "dev": "directus-extension build -w --no-minify",
-    "prepare": "directus-extension build"
+    "dev": "directus-extension build -w --no-minify"
   },
   "dependencies": {
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
-    "multer": "^2.0.2",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
     "@directus/extensions-sdk": "^12.0.1",
     "@types/multer": "^2.0.0",
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0",
     "vue": "^3.4.0"
-  }
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
 }
